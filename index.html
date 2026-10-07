@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Bank System</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3f3f3;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    form {
+        display: none;
+        margin-top: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .back {
+        background: #555;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Bank Management System</h2>
+
+    <button onclick="showForm('create')">Create Account</button>
+    <button onclick="showForm('deposit')">Deposit Money</button>
+    <button onclick="showForm('withdraw')">Withdraw Money</button>
+    <button onclick="showForm('details')">Show Details</button>
+    <button onclick="showForm('update')">Update Details</button>
+    <button onclick="showForm('delete')">Delete Account</button>
+
+    <!-- Create Form -->
+    <form id="create">
+        <input type="text" placeholder="Name">
+        <input type="number" placeholder="Age">
+        <input type="email" placeholder="Email">
+        <input type="number" placeholder="4-digit PIN">
+        <button>Create</button>
+        <button type="button" class="back" onclick="hideForms()">Back</button>
+    </form>
+
+    <!-- Deposit Form -->
+    <form id="deposit">
+        <input type="text" placeholder="Account Number">
+        <input type="number" placeholder="PIN">
+        <input type="number" placeholder="Amount">
+        <button>Deposit</button>
+        <button type="button" class="back" onclick="hideForms()">Back</button>
+    </form>
+
+    <!-- Withdraw Form -->
+    <form id="withdraw">
+        <input type="text" placeholder="Account Number">
+        <input type="number" placeholder="PIN">
+        <input type="number" placeholder="Amount">
+        <button>Withdraw</button>
+        <button type="button" class="back" onclick="hideForms()">Back</button>
+    </form>
+
+    <!-- Show Details -->
+    <form id="details">
+        <input type="text" placeholder="Account Number">
+        <input type="number" placeholder="PIN">
+        <button>Show Details</button>
+        <button type="button" class="back" onclick="hideForms()">Back</button>
+    </form>
+
+    <!-- Update -->
+    <form id="update">
+        <input type="text" placeholder="Account Number">
+        <input type="number" placeholder="PIN">
+        <input type="text" placeholder="New Name (optional)">
+        <input type="email" placeholder="New Email (optional)">
+        <input type="number" placeholder="New PIN (optional)">
+        <button>Update</button>
+        <button type="button" class="back" onclick="hideForms()">Back</button>
+    </form>
+
+    <!-- Delete -->
+    <form id="delete">
+        <input type="text" placeholder="Account Number">
+        <input type="number" placeholder="PIN">
+        <button>Delete</button>
+        <button type="button" class="back" onclick="hideForms()">Back</button>
+    </form>
+
+</div>
+
+<script>
+function showForm(id) {
+    hideForms();
+    document.getElementById(id).style.display = "block";
+}
+function hideForms() {
+    document.querySelectorAll("form").forEach(f => f.style.display = "none");
+}
+</script>
+
+</body>
+</html>
